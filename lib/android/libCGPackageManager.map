@@ -1,0 +1,121 @@
+Archive member included because of file (symbol)
+
+/Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+                              release/CGPackageManager_platform.os (s3eEdkThreadRunOnOS)
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x00000000        0x0 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .group         0x00000000        0x8 release/CGPackageManager_platform.os
+ .group         0x00000000        0x8 release/CGPackageManager_platform.os
+ .note.GNU-stack
+                0x00000000        0x0 release/CGPackageManager_platform.os
+ .note.GNU-stack
+                0x00000000        0x0 release/CGPackageManager.os
+ .note.GNU-stack
+                0x00000000        0x0 release/CGPackageManager_register.os
+ .note.GNU-stack
+                0x00000000        0x0 /Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+ .note.GNU-stack
+                0x00000000        0x0 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+Memory map
+
+ ** file header
+                0x00000000       0x34
+ ** segment headers
+                0x00000034       0xe0
+
+.interp         0x00000114       0x13
+ ** fill        0x00000114       0x13
+
+.dynsym         0x00000128       0xc0
+ ** dynsym      0x00000128       0xc0
+
+.dynstr         0x000001e8      0x112
+ ** string table
+                0x000001e8      0x112
+
+.hash           0x000002fc       0x44
+ ** hash        0x000002fc       0x44
+
+.rel.dyn        0x00000340       0x20
+ ** dynamic relocs
+                0x00000340       0x20
+
+.rel.plt        0x00000360       0x38
+ ** dynamic relocs
+                0x00000360       0x38
+
+.plt            0x00000398       0x68
+ ** PLT         0x00000398       0x68
+
+.text           0x00000400      0x558
+ .text.exit     0x00000400       0x10 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x00000400                __on_dlclose
+ .text          0x00000410       0x14 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x00000410                atexit
+ .text          0x00000424      0x328 release/CGPackageManager_platform.os
+                0x000004dc                CGPackageManagerInit_platform()
+                0x0000067c                CGPackageManagerTerminate_platform()
+                0x000006d4                getInstallerPackageName_platform()
+ .text._ZN7_JNIEnv9NewObjectEP7_jclassP10_jmethodIDz
+                0x0000074c       0x38 release/CGPackageManager_platform.os
+                0x0000074c                _JNIEnv::NewObject(_jclass*, _jmethodID*, ...)
+ .text._ZN7_JNIEnv16CallObjectMethodEP8_jobjectP10_jmethodIDz
+                0x00000784       0x38 release/CGPackageManager_platform.os
+                0x00000784                _JNIEnv::CallObjectMethod(_jobject*, _jmethodID*, ...)
+ .text          0x000007bc        0xc release/CGPackageManager.os
+                0x000007bc                CGPackageManagerInit()
+                0x000007c0                CGPackageManagerTerminate()
+                0x000007c4                getInstallerPackageName
+ .text          0x000007c8      0x100 release/CGPackageManager_register.os
+                0x000007e8                CGPackageManagerRegisterExt()
+                0x00000858                RegisterExt
+ .text          0x000008c8        0x0 /Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+ .text.s3eEdkErrorSetString
+                0x000008c8       0x30 /Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+                0x000008c8                s3eEdkErrorSetString
+ .text.s3eEdkThreadRunOnOS
+                0x000008f8       0x30 /Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+                0x000008f8                s3eEdkThreadRunOnOS
+ .text.s3eEdkThreadRunOnOSAsync
+                0xffffffffffffffff       0x30 /Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+                0x00000928                s3eEdkThreadRunOnOSAsync
+ .text          0x00000958        0x0 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.rodata         0x00000958       0x4d
+ ** merge strings
+                0x00000958       0x4d
+
+.fini_array     0x00001ec0        0x8
+ .fini_array    0x00001ec0        0x4 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .fini_array    0x00001ec4        0x4 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.init_array     0x00001ec8        0x4
+ .init_array    0x00001ec8        0x4 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.dynamic        0x00001ecc      0x100
+ ** dynamic     0x00001ecc      0x100
+
+.got            0x00001fcc       0x34
+ ** GOT         0x00001fcc        0xc
+ ** GOT PLT     0x00001fd8       0x28
+
+.data           0x00002000        0x4
+ .data          0x00002000        0x4 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+                0x00002000                __dso_handle
+ .data          0x00002004        0x0 release/CGPackageManager_platform.os
+ .data          0x00002004        0x0 release/CGPackageManager.os
+ .data          0x00002004        0x0 release/CGPackageManager_register.os
+ .data          0x00002004        0x0 /Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+ .data          0x00002004        0x0 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+
+.bss            0x00002004        0x8
+ .bss           0x00002004        0x0 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o
+ .bss           0x00002004        0x8 release/CGPackageManager_platform.os
+ .bss           0x0000200c        0x0 release/CGPackageManager.os
+ .bss           0x0000200c        0x0 release/CGPackageManager_register.os
+ .bss           0x0000200c        0x0 /Applications/Marmalade.app/Contents/s3e/edk/lib/android/libedk.a(edk_helpers.o)
+ .bss           0x0000200c        0x0 /Users/adriangomez/android-ndk-r9d/platforms/android-14/arch-arm/usr/lib/crtend_so.o

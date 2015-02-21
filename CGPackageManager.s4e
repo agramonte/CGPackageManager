@@ -1,0 +1,13 @@
+
+include:
+#include <s3eTypes.h>
+
+functions:
+
+/**
+ * Returns com.android.vending for a package installed from google or
+ * com.amazon.venezia.
+ * Note: Older amazon apps and other stores will return null.
+ */
+ const char* getInstallerPackageName() run_on_os_thread
+
