@@ -32,6 +32,7 @@ static const char* getInstallerPackageName_wrap()
 
 #define getInstallerPackageName getInstallerPackageName_wrap
 
+
 #endif
 
 void CGPackageManagerRegisterExt()

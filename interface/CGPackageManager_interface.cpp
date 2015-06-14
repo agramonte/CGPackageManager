@@ -11,26 +11,17 @@
 #include "CGPackageManager.h"
 
 
+// Define S3E_EXT_SKIP_LOADER_CALL_LOCK on the user-side to skip LoaderCallStart/LoaderCallDone()-entry.
+// e.g. in s3eNUI this is used for generic user-side IwUI-based implementation.
 #ifndef S3E_EXT_SKIP_LOADER_CALL_LOCK
-// For MIPs (and WP8) platform we do not have asm code for stack switching
-// implemented. So we make LoaderCallStart call manually to set GlobalLock
-#if defined __mips || defined S3E_ANDROID_X86 || (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP))
+#if defined I3D_ARCH_MIPS || defined S3E_ANDROID_X86 || (defined(WINAPI_FAMILY) && (WINAPI_FAMILY == WINAPI_FAMILY_PHONE_APP)) || defined I3D_ARCH_NACLX86_64
+// For platforms missing stack-switching (MIPS, WP8, Android-x86, NaCl, etc.) make loader-entry via LoaderCallStart/LoaderCallDone() on the user-side.
 #define LOADER_CALL_LOCK
 #endif
 #endif
 
-/**
- * Definitions for functions types passed to/from s3eExt interface
- */
-typedef const char*(*getInstallerPackageName_t)();
 
-/**
- * struct that gets filled in by CGPackageManagerRegister
- */
-typedef struct CGPackageManagerFuncs
-{
-    getInstallerPackageName_t m_getInstallerPackageName;
-} CGPackageManagerFuncs;
+#include "CGPackageManager_interface.h"
 
 static CGPackageManagerFuncs g_Ext;
 static bool g_GotExt = false;
@@ -80,16 +71,16 @@ const char* getInstallerPackageName()
     IwTrace(CGPACKAGEMANAGER_VERBOSE, ("calling CGPackageManager[0] func: getInstallerPackageName"));
 
     if (!_extLoad())
-        return NULL;
+        return;
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallStart(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallStart(S3E_TRUE, (void*)g_Ext.m_getInstallerPackageName);
 #endif
 
     const char* ret = g_Ext.m_getInstallerPackageName();
 
 #ifdef LOADER_CALL_LOCK
-    s3eDeviceLoaderCallDone(S3E_TRUE, NULL);
+    s3eDeviceLoaderCallDone(S3E_TRUE, (void*)g_Ext.m_getInstallerPackageName);
 #endif
 
     return ret;
