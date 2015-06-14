@@ -1,10 +1,14 @@
 # CGPackageManager
+Built with Marmalade 7.8 and NDK 10d.
 
 Returns package installer.
 
 1. Add extension to project mkb.
+
 2. Reload the project.
+
 3. Add reference: CGPackageManager.h
+
 4. Call only method: getInstallerPackageName()
 
 Notes:
